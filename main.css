@@ -1,76 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
-
-/* Sets the background color of the body to blue. Sets font to Rubik */
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');  
+/* Sets the background color of the body to blue. Sets font to Rubik */  
 body {
   background-color: #0b0c1a;
   font-family: 'rubik', sans-serif;
 }
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  border:1px solid #999999;
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  z-index: 1;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-.dropdown-content a:active {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.accordion .container .content dropdown:hover .dropdown-content {
-  width:0px;
-  height:0px;
-  display: block;
-  color: rgba(0,0,0,0);
-}
-
-.accordion .container .content dropdown:active .dropdown-content {
-    width:0px;
-    height:0px;
-    display: block;
-    color: rgba(0,0,0,0);
-}
-
-.accordion .container.active .content .dropdown:hover .dropdown-content {display: block;    width:auto;
-  height:auto;}
-
-.accordion .container.active .content .dropdown:active .dropdown-content {display: block;    width:auto;
-    height:auto;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/* Aligns the heading text to the center. */
- 
+/* Aligns the heading text to the center. */  
 h1 {
-    float: center;
-    color: #FEFEFE;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: center;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
-
-/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
-
+/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */  
 .accordion {
   width: 95%;
   color: #FEFEFE;
@@ -82,68 +24,98 @@ h1 {
 
 }
 
-.accordion .container {
-    position: relative;
-    margin: 10px 10px;
-  }
-  
-  /* Positions the labels relative to the #2673B8.container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
-  
-  .accordion .label {
-    position: relative;
-    font-size: 30px;
-    color: #fefefe;
-    cursor: pointer;
-  }
+/* Position the labels relative to the .container. Add padding to the top and bottom and increase font size. Also make it's cursor a pointer */  
+.accordion .label {  
+ position: relative;  
+ padding: 10px 0;  
+ font-size: 30px;  
+ color: #FFFFFF; 
+ cursor: pointer;  
+}  
+.accordion .content {  
+ position: relative;  
+ height: 0;  
+ color:white;
+ font-size: 20px;  
+ text-align: justify;  
+ width: 780px;  
+ overflow: hidden;  
+ transition: 0.5s;  
+}  
+Add a horizontal line between the contents  
+.accordion hr {  
+ width: 100;  
+ margin-left: 0;  
+ border: 1px solid grey;  
+}  
+/* Unhides the content part when active. Sets the height */  
 
-  /* Positions the plus sign 5px from the right. Centers it using the transform property. */
+/* Changes from plus sign to negative sign once active */  
+.accordion .container.active .label::before {  
+ content: '-';  
+ font-size: 30px;  
+}
+
+.accordion .container {
+  position: relative;
+  margin: 10px 10px;
+}
+
+/* Positions the labels relative to the #2673B8.container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+.accordion .label {
+  position: relative;
+  font-size: 30px;
+  color: #fefefe;
+  cursor: pointer;
+}
+
+/* Positions the plus sign 5px from the right. Centers it using the transform property. */
 
 .accordion .label::before {
-    content: '+';
-    color: #fefefe;
-    position: absolute;
-    top: 50%;
-    right: -5px;
-    font-size: 30px;
-    transform: translateY(-50%);
-  }
-  
-  /* Hides the content (height: 0), decreases font size, justifies text and adds transition */
-  
-  .accordion .content {
-    background: rgb(35,36,50);
-    font-size: 20px;
-    vertical-align: middle;
-    z-index:-50;
-    color:rgba(35,36,50,0);
-    transition: 0s;
-    height:0px
-  }
-  
-  /* Adds a horizontal line between the contents */
-  
-  .accordion hr {
-    width: 50;
-    margin-left: 0;
-    border: 0.5px solid #fefefe;
-  }
-  
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+.accordion .content {  
+  position: relative;  
+  height: 0;  
+  font-size: 20px;  
+  text-align: justify;  
+  width: 780px;  
+  overflow: hidden;  
+  transition: 0.5s;  
+ }  
+
+/* Adds a horizontal line between the contents */
+
+.accordion hr {
+  width: 50;
+  margin-left: 0;
+  border: 0.5px solid #fefefe;
+}
+
 
 
 /* Unhides the content part when active. Sets the height */
 
 .accordion .container.active .content {
-    vertical-align: middle;
-    color:#eeeeee;
-    transition: 0s;
-    height:50px
+  vertical-align: middle;
+  color:#eeeeee;
+  transition: 0.5s;
+  height:725px
 }
 
 
-  /* Changes from plus sign to negative sign once active */
-  
-  .accordion .container.active .label::before {
-    content: '-';
-    font-size: 30px;
-  }
-  
+/* Changes from plus sign to negative sign once active */
+
+.accordion .container.active .label::before {
+  content: '-';
+  font-size: 30px;
+}
