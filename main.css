@@ -41,7 +41,6 @@ h1 {
  text-align: justify;  
  width: 780px;  
  overflow: hidden;  
- transition: 0.5s;  
 }  
 Add a horizontal line between the contents  
 .accordion hr {  
@@ -90,8 +89,7 @@ Add a horizontal line between the contents
   font-size: 20px;  
   text-align: justify;  
   width: 780px;  
-  overflow: hidden;  
-  transition: 0.5s;  
+  overflow: hidden;   
  }  
 
 /* Adds a horizontal line between the contents */
@@ -110,7 +108,6 @@ Add a horizontal line between the contents
 .accordion .container.active .content {
   vertical-align: middle;
   color:#eeeeee;
-  transition: 0.5s;
   height: 100%;
 }
 
