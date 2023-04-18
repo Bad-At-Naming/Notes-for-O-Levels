@@ -106,13 +106,22 @@ Add a horizontal line between the contents
 
 /* Unhides the content part when active. Sets the height */
 
+
 .accordion .container.active .content {
   vertical-align: middle;
   color:#eeeeee;
   transition: 0.5s;
-  height:1151px
+  height: 100%;
 }
 
+/*#chemistry {
+  height:725px
+}
+
+#physics {
+  height:500px
+}
+*/
 
 /* Changes from plus sign to negative sign once active */
 
